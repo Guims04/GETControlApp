@@ -13,3 +13,6 @@ $ git merge origin/{nome_branch}
 
 Como enviar para a nuvem:
 $ git push origin {nome_branch}
+
+Listar branchs que existe na maquina
+$ git branch

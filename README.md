@@ -20,5 +20,6 @@ $ git push origin {nome_branch}
 Listar branchs que existe na maquina
 $ git branch
 
-Após instalar pacotes de confi typescript
-usar npx tsc --init
+Após instalar pacotes de config typescript
+usar npx para executar ex: npx tsc --init
+usar npn para install

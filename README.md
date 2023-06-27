@@ -28,3 +28,6 @@ biblioteca usada para criptografar
 bcryptjs
 instala junto como dependencia da biblioteca bcryptjs
 @types/bcryptjs -D
+
+RODA TODAS AS MIGRATIONS EXITENTES
+$ npx prisma migrate dev

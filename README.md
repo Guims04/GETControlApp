@@ -23,3 +23,8 @@ $ git branch
 Após instalar pacotes de config typescript
 usar npx para executar ex: npx tsc --init
 usar npn para install
+
+biblioteca usada para criptografar
+bcryptjs
+instala junto como dependencia da biblioteca bcryptjs
+@types/bcryptjs -D

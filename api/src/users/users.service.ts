@@ -1,5 +1,7 @@
 import { client } from "../prisma/client";
 import { hash } from "bcryptjs";
+import createHttpError from 'create-http-error';
+
 
 interface IUser{
     name:     string;
@@ -17,7 +19,7 @@ class UsersService{
     });
     
     if(user){
-      throw new Error("User already exists!");
+      throw createHttpError(409, "User already exists!");
     }    
     //Cadastra usuário
     const passwordHash = await hash(password,8)

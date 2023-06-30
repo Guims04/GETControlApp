@@ -7,7 +7,7 @@ interface IUser{
     username: string;
 }
 
-class AuthService{
+class UsersService{
   async create({name,username,password}:IUser){
     // Verificar se usuário existe
     const user = await client.user.findFirst({
@@ -32,4 +32,4 @@ class AuthService{
     
 }
 
-export{ AuthService }
+export{ UsersService }

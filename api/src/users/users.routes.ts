@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { AuthController } from "./users.controller";
+import { UsersController } from "./users.controller";
 
 const router = Router();
 const asyncHandler = require('express-async-handler');
-const auth = new AuthController();
+const users = new UsersController();
 
-router.route('/').post(asyncHandler(auth.createUser));
+router.route('/').post(asyncHandler(users.createUser));
 
 export { router };

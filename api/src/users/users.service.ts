@@ -2,16 +2,19 @@ import { client } from "../prisma/client";
 import { hash } from "bcryptjs";
 import createHttpError from 'create-http-error';
 
-
+// Interfaces
 interface IUser{
     name:     string;
     password: string;
     username: string;
 }
 
+// Class
 class UsersService{
+
+  // Create user function
   async create({name,username,password}:IUser){
-    // Verificar se usuário existe
+    // Check if user exists
     const user = await client.user.findFirst({
       where:{
         username
@@ -21,7 +24,8 @@ class UsersService{
     if(user){
       throw createHttpError(409, "User already exists!");
     }    
-    //Cadastra usuário
+
+    //Create user with cripted password
     const passwordHash = await hash(password,8)
     return await client.user.create({
       data:{
@@ -29,7 +33,7 @@ class UsersService{
         username,
         password: passwordHash,
       }
-    })
+    });
   }
     
 }

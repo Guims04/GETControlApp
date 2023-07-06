@@ -1,6 +1,7 @@
 import { client } from "../prisma/client";
 import { hash } from "bcryptjs";
 import createHttpError from 'create-http-error';
+import httpStatus from "http-status";
 
 // Interfaces
 interface IUser{
@@ -22,7 +23,7 @@ class UsersService{
     });
     
     if(user){
-      throw createHttpError(409, "User already exists!");
+      throw createHttpError(httpStatus.CONFLICT, "User already exists!");
     }    
 
     //Create user with cripted password

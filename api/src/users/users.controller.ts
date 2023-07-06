@@ -1,9 +1,10 @@
 import { Request, Response, request } from "express";
 import { UsersService } from "./users.service";
 
-// instances
-const usersService = new UsersService;
+// Instances
+const usersService = new UsersService();
 
+// Class
 class UsersController{
 
   // create user controller

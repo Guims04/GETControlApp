@@ -12,6 +12,8 @@ interface IAuth{
 
 // Class
 class AuthService{
+
+  // Authenticate User
   async authenticate({ username, password }: IAuth){
     
     // check if user exists

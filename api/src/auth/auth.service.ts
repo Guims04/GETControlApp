@@ -1,8 +1,10 @@
+import { Response, Request, NextFunction } from 'express';
 import createHttpError from "http-errors";
 import { client } from "../prisma/client";
 import httpStatus from "http-status";
 import { compare } from "bcryptjs";
-import { sign } from "jsonwebtoken";
+import { sign, verify } from "jsonwebtoken";
+import { jwtSecret } from '../api.config';
 
 // Interfaces
 interface IAuth{
@@ -31,11 +33,27 @@ class AuthService{
     // genarete user token
     const token = sign({      
       subject: user.id    
-    },"129bfc26-507d-4929-b395-0b8fd9c13f4d",{
+    },jwtSecret,{
       expiresIn: "20s"  
     });
-    
+
     return {token};
+  }
+
+  // validate token
+  validateToken(req: Request, res: Response, next: NextFunction){
+    const authToken = req.headers.authorization;
+
+    if(!authToken) throw createHttpError(httpStatus.BAD_REQUEST,"Token is missing");
+  // split Bearer to get token
+  const [,token] = authToken.split(" ");
+  try {
+    verify(token,jwtSecret);    
+    return next();
+  } catch (error) {
+    throw createHttpError(httpStatus.BAD_REQUEST, error);
+  }
+
   }
 }
 

@@ -74,13 +74,15 @@ class AuthService{
     // generate a moment expires
     const expiresIn = moment().add(15, 'minutes').unix();
 
-    console.log(userId);
-    console.log(expiresIn);
+    // check if refreshToken for user already existis to destroy
+    const checkRefreshToken = await client.refreshToken.findFirst({ where: {userId} })
+    if (checkRefreshToken)
+      await client.refreshToken.delete({ where:{ userId } })
+
     // create refresh token
     const refresh_token = await client.refreshToken.create({
       data: { userId, expiresIn }
     })
-    console.log(refresh_token);
 
     return refresh_token;
   }

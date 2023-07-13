@@ -9,13 +9,13 @@ $ git checkout {nome_branch}
 criar branch(ramificação):
 $ git checkout -b {nome_branch} (Obs.: sempre estar na develop)
 
-Como trazer da nuvem:
+Como trazer da nuvem: SEMPRE ANTES DE COMEÇAR E DEPOIS QUE TERMINAR
 $ git fetch (informante do que esta na nuvem)
 $ git pull origin {nome_branch} (Traz EXATAMENTE como ta na nuvem)
-$ git merge origin/{nome_branch}
+$ git merge origin/{nome_branch} atual -> ( feature/start-api )
 
 Como enviar para a nuvem:
-$ git push origin {nome_branch}
+$ git push origin {nome_branch} (ENVIAR EXATAMENTE como ta na MAQUINA)
 
 Listar branchs que existe na maquina
 $ git branch

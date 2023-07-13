@@ -24,7 +24,7 @@ class AuthService{
   generateToken(data: Itoken){
     return sign({ 
       subject: data
-    },jwtSecret,{ expiresIn: "20s" });
+    },jwtSecret,{ expiresIn: "1m" });
   }
 
   // Authenticate User
@@ -72,7 +72,7 @@ class AuthService{
   // create refresh token in table
   async createRefreshToken(userId: number){
     // generate a moment expires
-    const expiresIn = moment().add(15, 'minutes').unix();
+    const expiresIn = moment().add(2, 'minutes').unix();
 
     // check if refreshToken for user already existis to destroy
     const checkRefreshToken = await client.refreshToken.findFirst({ where: {userId} })
@@ -90,11 +90,15 @@ class AuthService{
   // Renew token
   async renewToken(refresh_token: string){
 
+    // check if refresh token exists where refresh id
     const refreshToken = await client.refreshToken.findFirst({
       where: { id: refresh_token }
     })
-
     if (!refreshToken) throw createHttpError(httpStatus.BAD_REQUEST, "Invalid refresh token");
+
+    // verify expiration
+    const isExpired = moment().isAfter(moment.unix(refreshToken.expiresIn)); 
+    if(isExpired) throw createHttpError(httpStatus.UNAUTHORIZED, "Time limit exceeded!");
 
     const token = this.generateToken({ userId: refreshToken.userId });
 

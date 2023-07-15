@@ -7,7 +7,7 @@ Mudar de branch(ramificação):
 $ git checkout {nome_branch}
 
 criar branch(ramificação):
-$ git checkout -b {nome_branch} (Obs.: sempre estar na develop)
+$ git checkout -b {nome_branch} ( Obs.: sempre estar na develop )
 
 Como trazer da nuvem: SEMPRE ANTES DE COMEÇAR E DEPOIS QUE TERMINAR
 $ git fetch (informante do que esta na nuvem)
@@ -29,5 +29,11 @@ bcryptjs
 instala junto como dependencia da biblioteca bcryptjs
 @types/bcryptjs -D
 
-RODA TODAS AS MIGRATIONS EXITENTES
+Rodar todas as migrations existentes
 $ npx prisma migrate dev
+
+Para criar componentes
+$ng g c nome-componente --module=nome-module
+
+Para criar module
+$ng g m nome-module

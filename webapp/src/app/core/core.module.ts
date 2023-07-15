@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarPerfilComponent } from './components/sidebar/sidebar-perfil/sidebar-perfil.component';
+import { SidebarSearchComponent } from './components/sidebar/sidebar-search/sidebar-search.component';
 
 
 
@@ -12,7 +13,8 @@ import { SidebarPerfilComponent } from './components/sidebar/sidebar-perfil/side
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    SidebarPerfilComponent
+    SidebarPerfilComponent,
+    SidebarSearchComponent
   ],
   imports: [
     CommonModule

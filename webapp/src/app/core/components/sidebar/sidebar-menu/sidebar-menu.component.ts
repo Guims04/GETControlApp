@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar-menu.component.scss']
 })
 export class SidebarMenuComponent {
-
+  menuItems = [
+    {
+      label: 'Dashboard',
+      path: 'dashboard',
+      icon: 'tachometer-alt',
+      acl: ['']
+    },
+    {
+      label: 'Gerenciamento',
+      icon: 'cog',
+      acl: [''],
+      badge: '1',
+      items: [
+        {
+          label: 'Configurações',
+          path: 'configs',
+        }
+      ]
+    }
+  ]
 }

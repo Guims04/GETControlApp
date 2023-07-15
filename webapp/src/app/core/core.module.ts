@@ -6,6 +6,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarPerfilComponent } from './components/sidebar/sidebar-perfil/sidebar-perfil.component';
 import { SidebarSearchComponent } from './components/sidebar/sidebar-search/sidebar-search.component';
 import { SidebarMenuComponent } from './components/sidebar/sidebar-menu/sidebar-menu.component';
+import { SidebarMenuItemComponent } from './components/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-item.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,10 +18,12 @@ import { SidebarMenuComponent } from './components/sidebar/sidebar-menu/sidebar-
     FooterComponent,
     SidebarPerfilComponent,
     SidebarSearchComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    SidebarMenuItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

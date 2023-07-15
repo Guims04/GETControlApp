@@ -1,0 +1,15 @@
+<a class="nav-link cur-pointer d-flex" [routerLink]="item.path || null" routerLinkActive="{{item.path && 'active'}}">
+  <div class="d-flex justify-content-center align-items-center" style="margin: 0 0.2rem;">
+    <i class="nav-icon m-0 {{item.icon ? 'fas fa-'+item.icon : 'far fa-circle nav-icon' }}"></i>
+  </div>
+  <p>
+    {{item.label}}
+    <i class="right fas fa-angle-left" *ngIf="item.items"></i>
+    <span class="right badge badge-success" [ngClass]="{'slideBadge': item.items}" *ngIf="item.badge" >{{item.badge}}</span>
+  </p>
+</a>
+<ul class="nav nav-treeview">
+  <ng-container *ngFor="let subItem of item.items">
+    <app-sidebar-menu-item class="nav-item menu-open" [item]="subItem"></app-sidebar-menu-item>
+  </ng-container>
+</ul>

@@ -1,4 +1,4 @@
-<div class="login-page">
+<div class="login-page" [ngClass]="{'bg-dark-mode': darkMode}">
   <div class="login-box">
     <div class="card card-outline card-primary">
       <div class="card-header d-flex justify-content-center">
@@ -6,6 +6,11 @@
           <img
             class="brand_logo"
             src="../../assets/img/GetControl_b_white.png"
+            alt="logo"
+          />
+          <img
+            class="brand_logo backImage"
+            [src]="darkMode ? '../../assets/img/backDarkMode.png' : '../../assets/img/backLightMode.png'"
             alt="logo"
           />
         </div>

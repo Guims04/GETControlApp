@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DarkModeService } from '../core/services/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,16 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   
-  public get isDarkMode(): boolean {
-    return true;
-  }
+  isDarkMode: boolean = false;
+
+  constructor(
+    private darkModeService: DarkModeService,
+  ){}
   
+  ngOnInit(): void {
+    this.darkModeService.isDarkMode$.subscribe((isDarkMode) => {
+      this.isDarkMode = isDarkMode;
+    });
+  }
 
 }

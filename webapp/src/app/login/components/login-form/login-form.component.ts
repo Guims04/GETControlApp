@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { LoginService } from '../../service/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -24,7 +25,8 @@ export class LoginFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   //Gets
@@ -59,7 +61,8 @@ export class LoginFormComponent {
       .login(this.username.value, this.password.value)
       .subscribe(
         (data) => {
-          console.log(data);
+          this.authService.setToken(data.token);
+          this.router.navigate(['dashboard']);
         },
         (error) => {
           console.log(error);

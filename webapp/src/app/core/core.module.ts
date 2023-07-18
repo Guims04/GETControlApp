@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderSearchComponent } from './components/header/header-search/header-search.component';
 import { HeaderMessagesComponent } from './components/header/header-messages/header-messages.component';
 import { HeaderNotificationsComponent } from './components/header/header-notifications/header-notifications.component';
+import { HeaderToggleThemeComponent } from './components/header/header-toggle-theme/header-toggle-theme.component';
 
 
 
@@ -25,7 +26,8 @@ import { HeaderNotificationsComponent } from './components/header/header-notific
     SidebarMenuItemComponent,
     HeaderSearchComponent,
     HeaderMessagesComponent,
-    HeaderNotificationsComponent
+    HeaderNotificationsComponent,
+    HeaderToggleThemeComponent
   ],
   imports: [
     CommonModule,

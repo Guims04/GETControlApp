@@ -12,6 +12,7 @@ import { HeaderSearchComponent } from './components/header/header-search/header-
 import { HeaderMessagesComponent } from './components/header/header-messages/header-messages.component';
 import { HeaderNotificationsComponent } from './components/header/header-notifications/header-notifications.component';
 import { HeaderToggleThemeComponent } from './components/header/header-toggle-theme/header-toggle-theme.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +32,8 @@ import { HeaderToggleThemeComponent } from './components/header/header-toggle-th
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,

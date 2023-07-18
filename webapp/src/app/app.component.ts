@@ -16,7 +16,7 @@ export class AppComponent {
 
   // Angular Methods
   ngOnInit(): void {
-    if (!this.isLogged && !this.authService.getToken())
+    if (!this.isLogged || !this.authService.getToken())
       this.router.navigate(['login']);
   }
 

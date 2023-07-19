@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node-dev src/server.ts",
+    "start:migrate:prod": "prisma migrate deploy && npm run start",
     "dev": "nodemon --exec prisma generate && ts-node-dev src/server.ts"
   },
   "author": "João Guilherme & Jorgen Mardens",

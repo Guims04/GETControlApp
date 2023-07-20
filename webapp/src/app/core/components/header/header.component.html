@@ -1,7 +1,7 @@
 <nav
   class="main-header navbar navbar-expand text-sm"
   [ngClass]="{
-    'navbar-white navbar-light': isDarkMode == false, 
+    'navbar-white navbar-light': isDarkMode == false,
     'navbar-dark border-bottom-0': isDarkMode == true
   }"
 >
@@ -21,10 +21,6 @@
       <app-header-search></app-header-search>
     </li>
 
-    <li class="nav-item">
-      <app-header-toggle-theme></app-header-toggle-theme>
-    </li>
-
     <li class="nav-item dropdown">
       <app-header-messages></app-header-messages>
     </li>
@@ -32,11 +28,21 @@
     <li class="nav-item dropdown">
       <app-header-notifications></app-header-notifications>
     </li>
+
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" role="button">
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
+
+    <li class="nav-item">
+      <app-header-toggle-theme></app-header-toggle-theme>
+    </li>
+
+    <li class="nav-item dropdown">
+      <app-header-perfil></app-header-perfil>
+    </li>
+
     <!-- <li class="nav-item">
       <a
         class="nav-link"

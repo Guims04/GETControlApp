@@ -13,6 +13,7 @@ import { HeaderMessagesComponent } from './components/header/header-messages/hea
 import { HeaderNotificationsComponent } from './components/header/header-notifications/header-notifications.component';
 import { HeaderToggleThemeComponent } from './components/header/header-toggle-theme/header-toggle-theme.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderPerfilComponent } from './components/header/header-perfil/header-perfil.component';
 
 
 
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     HeaderSearchComponent,
     HeaderMessagesComponent,
     HeaderNotificationsComponent,
-    HeaderToggleThemeComponent
+    HeaderToggleThemeComponent,
+    HeaderPerfilComponent
   ],
   imports: [
     CommonModule,

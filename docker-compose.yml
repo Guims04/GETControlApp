@@ -16,7 +16,7 @@ services:
     container_name: get_control_db
     image: postgres:latest
     ports:
-      - "5432:5432"
+      - "5430:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -32,10 +32,13 @@ services:
       - "3000:3000"
     container_name: api
     volumes:
-      - ./api:/usr/src/app/api
-      - /usr/src/app/api/node_modules
+      - ./api:/app/api
     env_file:
       - api/.env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - get_control_db
 
 volumes:
   pg-data:

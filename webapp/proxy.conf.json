@@ -1,0 +1,10 @@
+{
+  "/api/*": {
+    "target": "http://api:3000",
+    "ws": true,
+    "secure": false,
+    "logLevel": "silent",
+    "changeOrigin": true,
+    "timeout": 360000
+  }
+}

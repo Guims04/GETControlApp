@@ -1,0 +1,58 @@
+<nav
+  class="main-header navbar navbar-expand text-sm"
+  [ngClass]="{
+    'navbar-white navbar-light': isDarkMode == false,
+    'navbar-dark border-bottom-0': isDarkMode == true
+  }"
+>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+        ><i class="fas fa-bars"></i
+      ></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="index3.html" class="nav-link">Home</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto" data-widget="treeview">
+    <li class="nav-item">
+      <app-header-search></app-header-search>
+    </li>
+
+    <li class="nav-item dropdown">
+      <app-header-messages></app-header-messages>
+    </li>
+
+    <li class="nav-item dropdown">
+      <app-header-notifications></app-header-notifications>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-widget="fullscreen" role="button">
+        <i class="fas fa-expand-arrows-alt"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <app-header-toggle-theme></app-header-toggle-theme>
+    </li>
+
+    <li class="nav-item dropdown">
+      <app-header-perfil></app-header-perfil>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link"
+        data-widget="control-sidebar"
+        data-slide="true"
+        href="#"
+        role="button"
+      >
+        <i class="fas fa-th-large"></i>
+      </a>
+    </li> -->
+  </ul>
+</nav>

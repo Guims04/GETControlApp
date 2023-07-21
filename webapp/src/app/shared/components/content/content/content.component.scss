@@ -1,0 +1,12 @@
+.bg-icon{
+  position: fixed;
+  top: 50px;
+  right: 0;
+  opacity: .1;
+  z-index: -1;
+}
+
+.bg-icon i{
+  font-size: 400px;
+  transform: rotate(-15deg);
+}

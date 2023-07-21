@@ -1,0 +1,6 @@
+<div class="toggle-switch">
+  <label [ngClass]="{'active': isDarkMode}" >
+    <input type="checkbox" [(ngModel)]="isDarkMode" (click)="toggleDarkMode()" >
+    <span class="slider"></span>
+  </label>
+</div>

@@ -41,5 +41,7 @@ export const errorHandler = (error: CustomError, req: Request, res: Response, ne
 
   const obj = getErrorObject(error, req);
 
+  console.error(error);
+
   return res.status(obj.statusCode).json(obj);
 }

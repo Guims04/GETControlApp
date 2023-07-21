@@ -1,0 +1,25 @@
+<div class="login-page" [ngClass]="{'bg-dark-mode': isDarkMode}">
+  <div class="login-box">
+    <div class="card card-outline card-primary">
+      <div class="card-header d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <img
+            class="brand_logo"
+            src="../../assets/img/GetControl_b_white.png"
+            alt="logo"
+          />
+          <img
+            class="brand_logo backImage"
+            [src]="isDarkMode ? '../../assets/img/backDarkMode.png' : '../../assets/img/backLightMode.png'"
+            alt="logo"
+          />
+        </div>
+        <h1 class="brand-name"><b> GET</b>Control</h1>
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">Entre com seu usuário e senha!</p>
+        <app-login-form></app-login-form>
+      </div>
+    </div>
+  </div>
+</div>

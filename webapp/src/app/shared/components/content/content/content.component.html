@@ -1,0 +1,13 @@
+<div class="content-wrapper bg-transparent">
+  <app-content-header *ngIf="title != ''" [title]="title"></app-content-header>
+
+  <section class="content">
+    <div class="container-fluid">
+      <ng-content></ng-content>
+    </div>
+  </section>
+
+  <div class="bg-icon" *ngIf="bgIcon != ''">
+    <i class="fas fa-{{ bgIcon }}"></i>
+  </div>
+</div>

@@ -5,10 +5,12 @@ FROM node:lts-alpine as api
 WORKDIR /app/api
 
 # Copie os arquivos de definição de pacote
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
 COPY tsconfig.json ./
 COPY ./prisma ./prisma
+
+# Install Prisma CLI
+RUN npm install -g prisma
 
 # Instale as dependências
 RUN npm install

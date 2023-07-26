@@ -48,6 +48,14 @@ class UsersService {
 
     return user;
   }
+
+  async getAll() {
+    const users = await client.user.findMany();
+
+    if (!users) throw createHttpError(httpStatus.NOT_FOUND, "Users not found!");
+
+    return users;
+  }
 }
 
 export { UsersService };

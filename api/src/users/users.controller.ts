@@ -29,7 +29,11 @@ class UsersController {
   }
 
   // get all users
-  async getAllUsers(req: Request, res: Response) {}
+  async getAllUsers(req: Request, res: Response) {
+    const users = await usersService.getAll();
+
+    return res.json(users);
+  }
 
   //
 }

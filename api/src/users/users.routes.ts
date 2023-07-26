@@ -8,7 +8,11 @@ const asyncHandler = require("express-async-handler");
 const users = new UsersController();
 
 // Routes
-router.route("/").post(asyncHandler(users.createUser));
+router
+  .route("/")
+  .post(asyncHandler(users.createUser))
+  .get(asyncHandler(users.getAllUsers));
+
 router.route("/:userId(\\d+)").get(asyncHandler(users.getOneUser));
 
 export { router };

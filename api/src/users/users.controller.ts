@@ -5,19 +5,33 @@ import { UsersService } from "./users.service";
 const usersService = new UsersService();
 
 // Class
-class UsersController{
-
+class UsersController {
   // create user controller
-  async createUser(req: Request, res: Response ){
+  async createUser(req: Request, res: Response) {
     const { username, name, password } = req.body;
 
     const user = await usersService.create({
-      username, name, password,
+      username,
+      name,
+      password,
     });
-    
+
     return res.json(user);
   }
 
+  // get one user
+  async getOneUser(req: Request, res: Response) {
+    const { userId } = req.params;
+
+    const user = await usersService.getById(parseInt(userId));
+
+    return res.json(user);
+  }
+
+  // get all users
+  async getAllUsers(req: Request, res: Response) {}
+
+  //
 }
 
-export { UsersController }
+export { UsersController };

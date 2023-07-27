@@ -1,5 +1,7 @@
 import { Request, Response, request } from "express";
 import { UsersService } from "./users.service";
+import createHttpError from "http-errors";
+import httpStatus from "http-status";
 
 // Instances
 const usersService = new UsersService();
@@ -47,11 +49,15 @@ class UsersController {
 
   // delete user
   async deleteUser(req: Request, res: Response) {
-    const { userId } = req.params;
-
-    const user = await usersService.delete(parseInt(userId));
-
-    return res.json(user);
+    try {
+      const { userId } = req.params;
+  
+      const user = await usersService.softDelete(parseInt(userId));
+  
+      return res.json(user);
+    } catch(error) {
+      throw createHttpError(httpStatus.BAD_REQUEST, error )
+    }
   }
 }
 

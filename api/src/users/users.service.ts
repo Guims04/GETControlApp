@@ -41,6 +41,7 @@ class UsersService {
     const user = await client.user.findUnique({
       where: {
         id: userId,
+        deletedAt: null,
       },
     });
 
@@ -51,7 +52,7 @@ class UsersService {
 
   // Get all users
   async getAll() {
-    const users = await client.user.findMany();
+    const users = await client.user.findMany({ where: { deletedAt: null } });
 
     if (!users) throw createHttpError(httpStatus.NOT_FOUND, "Users not found!");
 
@@ -60,7 +61,7 @@ class UsersService {
 
   // update user
   async update(userId: number, body: IUser) {
-    this.getById(userId);
+    await this.getById(userId);
 
     if (body.password) body.password = await hash(body.password, 8);
 
@@ -80,7 +81,7 @@ class UsersService {
 
   // Delete user
   async delete(userId) {
-    this.getById(userId);
+    await this.getById(userId);
 
     const user = await client.user.delete({ where: { id: userId } });
 
@@ -91,6 +92,24 @@ class UsersService {
       );
 
     return user;
+  }
+
+  // Soft delete user
+  async softDelete(userId) {
+    await this.getById(userId);
+  
+    const deletedUser = await client.user.update({
+      where: { id: userId },
+      data: { deletedAt: new Date() },
+    });
+  
+    if (!deletedUser)
+      throw createHttpError(
+        httpStatus.BAD_REQUEST,
+        "An error occurred while trying to delete the user."
+      );
+  
+    return deletedUser;
   }
 }
 

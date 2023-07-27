@@ -16,6 +16,7 @@ router
 router
   .route("/:userId(\\d+)")
   .get(asyncHandler(users.getOneUser))
-  .put(asyncHandler(users.updateUser));
+  .put(asyncHandler(users.updateUser))
+  .delete(asyncHandler(users.deleteUser));
 
 export { router };

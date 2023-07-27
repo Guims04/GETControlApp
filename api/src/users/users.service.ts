@@ -36,7 +36,7 @@ class UsersService {
     });
   }
 
-  // Get One User
+  // Get one user
   async getById(userId: number) {
     const user = await client.user.findUnique({
       where: {
@@ -49,6 +49,7 @@ class UsersService {
     return user;
   }
 
+  // Get all users
   async getAll() {
     const users = await client.user.findMany();
 
@@ -57,7 +58,8 @@ class UsersService {
     return users;
   }
 
-  async updateUser(userId: number, body: IUser) {
+  // update user
+  async update(userId: number, body: IUser) {
     this.getById(userId);
 
     if (body.password) body.password = await hash(body.password, 8);
@@ -71,6 +73,21 @@ class UsersService {
       throw createHttpError(
         httpStatus.BAD_REQUEST,
         "An error occurred while trying to update the user."
+      );
+
+    return user;
+  }
+
+  // Delete user
+  async delete(userId) {
+    this.getById(userId);
+
+    const user = await client.user.delete({ where: { id: userId } });
+
+    if (!user)
+      throw createHttpError(
+        httpStatus.BAD_REQUEST,
+        "An error occurred while trying to delete the user."
       );
 
     return user;

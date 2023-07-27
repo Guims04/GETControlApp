@@ -13,6 +13,9 @@ router
   .post(asyncHandler(users.createUser))
   .get(asyncHandler(users.getAllUsers));
 
-router.route("/:userId(\\d+)").get(asyncHandler(users.getOneUser));
+router
+  .route("/:userId(\\d+)")
+  .get(asyncHandler(users.getOneUser))
+  .put(asyncHandler(users.updateUser));
 
 export { router };

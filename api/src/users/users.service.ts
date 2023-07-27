@@ -56,6 +56,25 @@ class UsersService {
 
     return users;
   }
+
+  async updateUser(userId: number, body: IUser) {
+    this.getById(userId);
+
+    if (body.password) body.password = await hash(body.password, 8);
+
+    const user = await client.user.update({
+      where: { id: userId },
+      data: body,
+    });
+
+    if (!user)
+      throw createHttpError(
+        httpStatus.BAD_REQUEST,
+        "An error occurred while trying to update the user."
+      );
+
+    return user;
+  }
 }
 
 export { UsersService };

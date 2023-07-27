@@ -35,7 +35,15 @@ class UsersController {
     return res.json(users);
   }
 
-  //
+  //  update user
+  async updateUser(req: Request, res: Response) {
+    const { userId } = req.params;
+    const { body } = req;
+
+    const user = await usersService.updateUser(parseInt(userId), body);
+
+    return res.json(user);
+  }
 }
 
 export { UsersController };

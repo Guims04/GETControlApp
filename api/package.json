@@ -10,6 +10,9 @@
     "start:migrate": "prisma migrate dev && npm run start",
     "dev": "nodemon --exec prisma generate && ts-node-dev src/server.ts"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "author": "João Guilherme & Jorgen Mardens",
   "license": "MIT",
   "devDependencies": {

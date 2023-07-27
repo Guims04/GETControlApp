@@ -1,39 +1,54 @@
 # GETControlApp
 
-Criar pacote npm
-$ npm init
+### How to run with docker compose
 
-Mudar de branch(ramificação):
-$ git checkout {nome_branch}
+  ** In root project run **
+  ```
+  docker compose up 
+  ```
 
-criar branch(ramificação):
-$ git checkout -b {nome_branch} ( Obs.: sempre estar na develop )
+  ** To create the admin user. Run it in docker terminal: **
+  ```
+  npx prisma db seed
+  ```
 
-Como trazer da nuvem: SEMPRE ANTES DE COMEÇAR E DEPOIS QUE TERMINAR
-$ git fetch (informante do que esta na nuvem)
-$ git pull origin {nome_branch} (Traz EXATAMENTE como ta na nuvem)
-$ git merge origin/{nome_branch} atual -> ( feature/start-api )
 
-Como enviar para a NUVEM:
-$ git push origin {nome_branch} (ENVIAR EXATAMENTE como ta na MAQUINA)
+### Helpers
 
-Listar branchs que existe na maquina
-$ git branch
+  Criar pacote npm
+  $ npm init
 
-Após instalar pacotes de config typescript
-usar npx para executar ex: npx tsc --init
-usar npn para install
+  Mudar de branch(ramificação):
+  $ git checkout {nome_branch}
 
-biblioteca usada para criptografar
-bcryptjs
-instala junto como dependencia da biblioteca bcryptjs
-@types/bcryptjs -D
+  criar branch(ramificação):
+  $ git checkout -b {nome_branch} ( Obs.: sempre estar na develop )
 
-Rodar todas as migrations existentes
-$ npx prisma migrate dev
+  Como trazer da nuvem: SEMPRE ANTES DE COMEÇAR E DEPOIS QUE TERMINAR
+  $ git fetch (informante do que esta na nuvem)
+  $ git pull origin {nome_branch} (Traz EXATAMENTE como ta na nuvem)
+  $ git merge origin/{nome_branch} atual -> ( feature/start-api )
 
-Para criar componentes
-$ng g c nome-componente --module=nome-module
+  Como enviar para a NUVEM:
+  $ git push origin {nome_branch} (ENVIAR EXATAMENTE como ta na MAQUINA)
 
-Para criar module
-$ng g m nome-module
+  Listar branchs que existe na maquina
+  $ git branch
+
+  Após instalar pacotes de config typescript
+  usar npx para executar ex: npx tsc --init
+  usar npn para install
+
+  biblioteca usada para criptografar
+  bcryptjs
+  instala junto como dependencia da biblioteca bcryptjs
+  @types/bcryptjs -D
+
+  Rodar todas as migrations existentes
+  $ npx prisma migrate dev
+
+  Para criar componentes
+  $ng g c nome-componente --module=nome-module
+
+  Para criar module
+  $ng g m nome-module

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sidebar-menu',
   templateUrl: './sidebar-menu.component.html',
-  styleUrls: ['./sidebar-menu.component.scss']
+  styleUrls: ['./sidebar-menu.component.scss'],
 })
 export class SidebarMenuComponent {
   menuItems = [
@@ -11,7 +11,13 @@ export class SidebarMenuComponent {
       label: 'Dashboard',
       path: 'dashboard',
       icon: 'tachometer-alt',
-      acl: ['']
+      acl: [''],
+    },
+    {
+      label: 'Usuários',
+      path: 'users',
+      icon: 'user',
+      acl: [''],
     },
     {
       label: 'Gerenciamento',
@@ -22,8 +28,8 @@ export class SidebarMenuComponent {
         {
           label: 'Configurações',
           path: 'configs',
-        }
-      ]
-    }
-  ]
+        },
+      ],
+    },
+  ];
 }

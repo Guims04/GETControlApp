@@ -42,6 +42,12 @@ ENJOY 🙃
 
 Here are some helpful commands and tips for working with the project:
 
+- para startar API
+
+  ```
+  $ npm run init
+  ```
+
 - Criar pacote npm
 
   ```

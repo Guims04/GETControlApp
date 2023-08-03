@@ -13,6 +13,6 @@ const authController = new AuthController();
 router.use("/login", authRouter);
 //router.use(authService.validateToken);
 router.use("/renew-token", authController.renewToken);
-router.use("/user", userRouter);
+router.use("/users", userRouter);
 
 export { router };

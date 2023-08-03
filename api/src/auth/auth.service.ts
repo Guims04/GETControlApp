@@ -27,7 +27,7 @@ class AuthService {
         subject: data,
       },
       jwtSecret,
-      { expiresIn: "1m" }
+      { expiresIn: "10m" }
     );
   }
 
@@ -86,7 +86,7 @@ class AuthService {
   // create refresh token in table
   async createRefreshToken(userId: number) {
     // generate a moment expires
-    const expiresIn = moment().add(2, "minutes").unix();
+    const expiresIn = moment().add(20, "minutes").unix();
 
     // check if refreshToken for user already existis to destroy
     const checkRefreshToken = await client.refreshToken.findFirst({

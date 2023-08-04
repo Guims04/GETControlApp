@@ -97,18 +97,18 @@ class UsersService {
   // Soft delete user
   async softDelete(userId) {
     await this.getById(userId);
-  
+
     const deletedUser = await client.user.update({
       where: { id: userId },
       data: { deletedAt: new Date() },
     });
-  
+
     if (!deletedUser)
       throw createHttpError(
         httpStatus.BAD_REQUEST,
         "An error occurred while trying to delete the user."
       );
-  
+
     return deletedUser;
   }
 }

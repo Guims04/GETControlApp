@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-end mb-3">
+  <ng-content></ng-content>
+
+  <div class="btn-group text-right ml-2" role="group">
+    <button
+      *ngIf="showDelete"
+      [tooltip]="'Excluir'"
+      type="button"
+      class="btn btn-danger"
+    >
+      <!-- (click)="openConfirmationModal()" -->
+      <i class="fas fa-trash"></i>
+    </button>
+
+    <button
+      *ngIf="showSubmit"
+      [tooltip]="'Salvar'"
+      type="submit"
+      class="btn btn-success"
+    >
+      <i class="fa fa-save"></i>
+    </button>
+
+    <button
+      *ngIf="showCancel"
+      [tooltip]="'Fechar'"
+      type="button"
+      class="btn btn-default"
+      (click)="cancelForm()"
+    >
+      <i class="fas fa-sign-out-alt"></i>
+    </button>
+  </div>
+</div>

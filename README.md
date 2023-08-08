@@ -54,22 +54,26 @@ Here are some helpful commands and tips for working with the project:
   $ npm init
   ```
 
-- Mudar de branch(ramificação):
-
-  ```
-  $ git checkout {nome_branch}
-  ```
-
 - criar branch(ramificação):
 
   ```
   $ git checkout -b {nome_branch} ( Obs.: sempre estar na develop )
   ```
 
-- excluir branch(ramificação):
+- Mudar de branch(ramificação):
 
   ```
-  $ git branch -d {nome_branch} ( Obs.: sempre estar na develop )
+  $ git checkout {nome_branch}
+  ```
+
+- Listar branchs que existe na maquina
+  ```
+  $ git branch
+  ```
+- Excluir branchs que existe na maquina
+
+  ```
+  $ git branch -d {nome_branch}
   ```
 
 - Como trazer da nuvem: SEMPRE ANTES DE COMEÇAR E DEPOIS QUE TERMINAR
@@ -81,14 +85,8 @@ Here are some helpful commands and tips for working with the project:
   ```
 
 - Como enviar para a NUVEM:
-
   ```
   $ git push origin {nome_branch} (ENVIAR EXATAMENTE como ta na MAQUINA)
-  ```
-
-- Listar branchs que existe na maquina
-  ```
-  $ git branch
   ```
 - Rodar todas as migrations existentes
 
@@ -102,11 +100,10 @@ Here are some helpful commands and tips for working with the project:
   $ ng g c nome-componente --module=nome-module
   ```
 
-- Para criar module
-
-  ```
-  $ ng g m nome-module
-  ```
+  - Para criar module
+    ```
+    $ ng g m nome-module
+    ```
 
   <br>
 
@@ -118,6 +115,11 @@ Here are some helpful commands and tips for working with the project:
   <br>
 
 biblioteca usada para criptografar:
+
+- bcryptjs
+- instala junto como dependencia da biblioteca bcryptjs
+- @types/bcryptjs -D
+  biblioteca usada para criptografar:
 
 - bcryptjs
 - instala junto como dependencia da biblioteca bcryptjs

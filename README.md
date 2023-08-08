@@ -42,6 +42,12 @@ ENJOY 🙃
 
 Here are some helpful commands and tips for working with the project:
 
+- para startar API
+
+  ```
+  $ npm run init
+  ```
+
 - Criar pacote npm
 
   ```
@@ -94,20 +100,26 @@ Here are some helpful commands and tips for working with the project:
   $ ng g c nome-componente --module=nome-module
   ```
 
-- Para criar module
-  ```
-  $ ng g m nome-module
-  ```
+  - Para criar module
+    ```
+    $ ng g m nome-module
+    ```
 
   <br>
-  
+
   Após instalar pacotes de config typescript:
-   - usar npx para executar ex: npx tsc --init
-   - usar npn para install
+
+  - usar npx para executar ex: npx tsc --init
+  - usar npn para install
 
   <br>
 
 biblioteca usada para criptografar:
+
+- bcryptjs
+- instala junto como dependencia da biblioteca bcryptjs
+- @types/bcryptjs -D
+  biblioteca usada para criptografar:
 
 - bcryptjs
 - instala junto como dependencia da biblioteca bcryptjs

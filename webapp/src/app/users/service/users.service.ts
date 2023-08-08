@@ -6,10 +6,10 @@ import { ApiUrl } from 'src/app/app.constants';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class UsersService {
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${ApiUrl}/login`, { username, password });
+  getAll(): Observable<any> {
+    return this.http.get(`${ApiUrl}/users`);
   }
 }

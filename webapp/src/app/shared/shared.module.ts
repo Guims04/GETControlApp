@@ -14,6 +14,6 @@ import { FormActionsComponent } from './components/form/form-actions/form-action
     FormActionsComponent,
   ],
   imports: [CommonModule, TooltipModule],
-  exports: [ContentHeaderComponent, ContentComponent],
+  exports: [ContentHeaderComponent, ContentComponent, FormComponent],
 })
 export class SharedModule {}

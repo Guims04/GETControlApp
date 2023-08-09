@@ -5,6 +5,7 @@ import { ContentHeaderComponent } from './components/content/content-header/cont
 import { ContentComponent } from './components/content/content/content.component';
 import { FormComponent } from './components/form/form.component';
 import { FormActionsComponent } from './components/form/form-actions/form-actions.component';
+import { FormFieldComponent } from './components/form/form-field/form-field.component';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,14 @@ import { FormActionsComponent } from './components/form/form-actions/form-action
     ContentComponent,
     FormComponent,
     FormActionsComponent,
+    FormFieldComponent,
   ],
   imports: [CommonModule, TooltipModule],
-  exports: [ContentHeaderComponent, ContentComponent, FormComponent],
+  exports: [
+    ContentHeaderComponent,
+    ContentComponent,
+    FormComponent,
+    FormFieldComponent,
+  ],
 })
 export class SharedModule {}

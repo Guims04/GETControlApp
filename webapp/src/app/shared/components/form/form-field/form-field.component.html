@@ -1,0 +1,8 @@
+<div class="form-group">
+  <div>
+    <label *ngIf="label"
+      >{{ label }}<span class="text-danger" *ngIf="isRequired">*</span></label
+    >
+  </div>
+  <ng-content></ng-content>
+</div>

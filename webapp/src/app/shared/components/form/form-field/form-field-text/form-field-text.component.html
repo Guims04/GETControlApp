@@ -1,0 +1,11 @@
+<app-form-field [label]="label" [appendIcon]="appendIcon">
+  <input
+    type="text"
+    class="form-control"
+    [ngClass]="{ 'text-uppercase': uppercase }"
+    [formControl]="getFormControl()"
+    [placeholder]="placeholder"
+    [attr.maxLength]="maxLength"
+    [minLength]="minlength"
+  />
+</app-form-field>

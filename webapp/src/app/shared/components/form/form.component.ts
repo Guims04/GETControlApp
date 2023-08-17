@@ -8,6 +8,11 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormComponent {
   // atributtes
+  @Input() form: FormGroup = new FormGroup({});
+  @Input() showSubmit: boolean = true;
+  @Input() showCancel: boolean = true;
+  @Input() showDelete: boolean = true;
+
   @Output() onSubmit: EventEmitter<object> = new EventEmitter<object>();
   @Output() onCancel: EventEmitter<void> = new EventEmitter<void>();
   @Output() onDelete: EventEmitter<void> = new EventEmitter<void>();

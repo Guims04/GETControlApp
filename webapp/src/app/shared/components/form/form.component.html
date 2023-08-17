@@ -1,5 +1,18 @@
-<form (ngSubmit)="submit($event)" autocomplete="on" spellcheck="true">
-  <app-form-actions></app-form-actions>
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit($event)"
+  autocomplete="on"
+  spellcheck="true"
+>
+  <app-form-actions
+    [showSubmit]="showSubmit"
+    [showCancel]="showCancel"
+    [showDelete]="showDelete"
+  ></app-form-actions>
   <ng-content></ng-content>
-  <app-form-actions></app-form-actions>
+  <app-form-actions
+    [showSubmit]="showSubmit"
+    [showCancel]="showCancel"
+    [showDelete]="showDelete"
+  ></app-form-actions>
 </form>

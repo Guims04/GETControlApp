@@ -1,14 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Usuário" formControlName="username" />
-    <div class="input-group-append">
-      <div class="input-group-text">
-        <span class="fas fa-user"></span>
-      </div>
-    </div>
-  </div>
-  <div class="input-group mb-3">
-    <input type="password" class="form-control" placeholder="Senha" formControlName="password" />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Senha"
+      formControlName="password"
+    />
     <div class="input-group-append">
       <div class="input-group-text">
         <span class="fas fa-lock"></span>
@@ -24,9 +21,21 @@
     </div> -->
 
     <div class="col-12">
-      <button type="submit" class="btn btn-primary btn-block">
-        Entrar
-      </button>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
     </div>
   </div>
 </form>
+
+<app-form
+  [showSubmit]="false"
+  [showDelete]="false"
+  [showCancel]="false"
+  (onSubmit)="onSubmit()"
+  [form]="form"
+>
+  <app-form-field-text
+    placeholder="Usuário"
+    [control]="username"
+    [appendIcon]="'fa-user'"
+  ></app-form-field-text>
+</app-form>

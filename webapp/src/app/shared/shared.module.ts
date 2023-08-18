@@ -8,6 +8,7 @@ import { FormActionsComponent } from './components/form/form-actions/form-action
 import { FormFieldComponent } from './components/form/form-field/form-field.component';
 import { FormFieldTextComponent } from './components/form/form-field/form-field-text/form-field-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormFieldPasswordComponent } from './components/form/form-field/form-field-password/form-field-password.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormActionsComponent,
     FormFieldComponent,
     FormFieldTextComponent,
+    FormFieldPasswordComponent,
   ],
   imports: [CommonModule, TooltipModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -25,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormComponent,
     FormFieldComponent,
     FormFieldTextComponent,
+    FormFieldPasswordComponent,
   ],
 })
 export class SharedModule {}

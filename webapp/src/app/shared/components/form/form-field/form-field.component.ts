@@ -31,7 +31,6 @@ export class FormFieldComponent {
 
   // angular methods
   ngOnInit(): void {
-    console.log(this.label);
   }
 
   // our methods

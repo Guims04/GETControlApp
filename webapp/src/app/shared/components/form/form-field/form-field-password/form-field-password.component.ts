@@ -16,10 +16,6 @@ export class FormFieldPasswordComponent extends FormFieldComponent {
   // getters
   // angular methods
   override ngOnInit(): void {
-    this.subscription.add(
-      this.control?.valueChanges.subscribe((value) => {
-        this.convertUtf8String(value);
-      })
-    );
+  
   }
 }

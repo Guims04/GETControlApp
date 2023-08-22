@@ -9,6 +9,8 @@ import { FormFieldComponent } from './components/form/form-field/form-field.comp
 import { FormFieldTextComponent } from './components/form/form-field/form-field-text/form-field-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldPasswordComponent } from './components/form/form-field/form-field-password/form-field-password.component';
+import { FormFieldNumberComponent } from './components/form/form-field/form-field-number/form-field-number.component';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,16 @@ import { FormFieldPasswordComponent } from './components/form/form-field/form-fi
     FormFieldComponent,
     FormFieldTextComponent,
     FormFieldPasswordComponent,
+    FormFieldNumberComponent,
   ],
-  imports: [CommonModule, TooltipModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    CommonModule,
+    TooltipModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+  ],
   exports: [
     ContentHeaderComponent,
     ContentComponent,
@@ -28,6 +38,7 @@ import { FormFieldPasswordComponent } from './components/form/form-field/form-fi
     FormFieldComponent,
     FormFieldTextComponent,
     FormFieldPasswordComponent,
+    FormFieldNumberComponent
   ],
 })
 export class SharedModule {}

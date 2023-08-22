@@ -4,5 +4,13 @@
       >{{ label }}<span class="text-danger" *ngIf="isRequired">*</span></label
     >
   </div>
-  <ng-content></ng-content>
+
+  <div class="input-group mb-3">
+    <ng-content></ng-content>
+    <div class="input-group-append" *ngIf="appendIcon">
+      <div class="input-group-text">
+        <span class="fas {{ appendIcon }}"></span>
+      </div>
+    </div>
+  </div>
 </div>

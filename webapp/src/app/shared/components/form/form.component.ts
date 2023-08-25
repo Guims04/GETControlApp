@@ -26,4 +26,7 @@ export class FormComponent {
   submit(event: any): void {
     this.onSubmit.emit();
   }
+  cancel(event: any): void {
+    this.onCancel.emit();
+  }
 }

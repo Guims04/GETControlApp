@@ -15,8 +15,10 @@ export class FormActionsComponent {
   @Input() showCancel: boolean = true;
   @Input() showDelete: boolean = true;
 
+  @Output() onSubmit: EventEmitter<void> = new EventEmitter<void>();
   @Output() onCancel: EventEmitter<void> = new EventEmitter<void>();
   @Output() onDelete: EventEmitter<void> = new EventEmitter<void>();
+  @Output() onImport: EventEmitter<void> = new EventEmitter<void>();
 
   // modalRef: BsModalRef;
   private subscriptions: Subscription = new Subscription();
@@ -51,6 +53,15 @@ export class FormActionsComponent {
     //this.modalRef.hide();
   }
 
+  submitForm(): void {
+    this.onSubmit.emit();
+    //this.modalRef.hide();
+  }
+
+  importForm(): void {
+    this.onImport.emit();
+    //this.modalRef.hide();
+  }
   // openConfirmationModal() {
   //   const config = {
   //     class: 'modal-sm',

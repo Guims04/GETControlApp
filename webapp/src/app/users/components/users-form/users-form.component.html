@@ -1,3 +1,17 @@
-<app-form>
-  <app-card title="Usuário"> </app-card>
+<app-form (onCancel)="close()">
+  <app-card title="Usuário">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <app-form-field-text
+          label="Nome"
+          [control]="name"
+          placeholder="Digite seu nome"
+          [uppercase]="true"
+          [minlength]="4"
+          [maxLength]="50"
+        >
+        </app-form-field-text>
+      </div>
+    </div>
+  </app-card>
 </app-form>

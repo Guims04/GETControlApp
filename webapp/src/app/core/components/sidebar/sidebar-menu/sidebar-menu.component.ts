@@ -18,18 +18,24 @@ export class SidebarMenuComponent {
       path: 'users',
       icon: 'user',
       acl: [''],
-    },
-    {
-      label: 'Gerenciamento',
-      icon: 'cog',
-      acl: [''],
-      badge: '1',
       items: [
         {
-          label: 'Configurações',
-          path: 'configs',
+          label: 'form',
+          path: 'users/new',
         },
       ],
     },
+    // {
+    //   label: 'Gerenciamento',
+    //   icon: 'cog',
+    //   acl: [''],
+    //   badge: '1',
+    //   items: [
+    //     {
+    //       label: 'Configurações',
+    //       path: 'configs',
+    //     },
+    //   ],
+    // },
   ];
 }

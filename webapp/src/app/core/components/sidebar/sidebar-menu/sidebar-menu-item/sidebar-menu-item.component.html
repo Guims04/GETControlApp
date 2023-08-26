@@ -10,6 +10,6 @@
 </a>
 <ul class="nav nav-treeview">
   <ng-container *ngFor="let subItem of item.items">
-    <app-sidebar-menu-item class="nav-item menu-open" [item]="subItem"></app-sidebar-menu-item>
+    <li app-sidebar-menu-item class="nav-item" [item]="subItem"></li>
   </ng-container>
 </ul>

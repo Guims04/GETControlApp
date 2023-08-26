@@ -4,7 +4,7 @@
     data-widget="treeview" role="menu" data-accordion="false">
 
     <ng-container *ngFor="let item of menuItems">
-      <app-sidebar-menu-item class="nav-item menu-open" [item]="item"></app-sidebar-menu-item>
+      <li app-sidebar-menu-item class="nav-item" [item]="item"></li>
     </ng-container>
 
   </ul>

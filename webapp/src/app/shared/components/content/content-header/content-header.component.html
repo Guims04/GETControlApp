@@ -6,8 +6,10 @@
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-          <li class="breadcrumb-item active">...</li>
+          <li class="breadcrumb-item"><a href="dashboard" [ngStyle]="{'color': urlArray.length == 0 ? 'gray' : 'cadetblue' }" >dashboard</a></li>
+          <li class="breadcrumb-item" *ngFor="let item of urlArray"><a href="{{item.element}}"
+              [ngStyle]="{'color':item.last ? 'gray' : 'cadetblue' }">{{item.element}}</a></li>
+          <!-- <li class="breadcrumb-item active">...</li> -->
         </ol>
       </div>
     </div>

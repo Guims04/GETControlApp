@@ -17,7 +17,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           if (err.status === 401 || err.status === 504) {
             error = err.statusText;
             
-            if (this.authService.hasAccess()) this.authService.logout();
+            if (!this.authService.hasAccess()) this.authService.logout();
           } else if (err.error === null) {
             error = 'Something went wrong...';
           } else {

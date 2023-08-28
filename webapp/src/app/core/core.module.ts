@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderPerfilComponent } from './components/header/header-perfil/header-perfil.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './services/error.interceptor';
+import { TokenInterceptor } from './services/token.interceptor';
 
 
 
@@ -45,7 +46,8 @@ import { ErrorInterceptor } from './services/error.interceptor';
     FooterComponent
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ]
 })
 export class CoreModule { }

@@ -72,7 +72,7 @@ class AuthService {
     const authToken = req.headers.authorization;
 
     if (!authToken)
-      throw createHttpError(httpStatus.BAD_REQUEST, "Token is missing");
+      throw createHttpError(httpStatus.UNAUTHORIZED, "Token is missing");
     // split Bearer to get token
     const [, token] = authToken.split(" ");
     try {

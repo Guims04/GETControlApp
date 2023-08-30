@@ -1,16 +1,38 @@
-<app-form (onCancel)="close()">
+<app-form (onCancel)="close()" (onSubmit)="onSubmit()">
   <app-card title="Usuário">
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12">
         <app-form-field-text
           label="Nome"
           [control]="name"
-          placeholder="Digite seu nome"
+          placeholder="Digite um nome"
           [uppercase]="true"
           [minlength]="4"
           [maxLength]="50"
         >
         </app-form-field-text>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-form-field-text
+          label="Usuário"
+          [control]="username"
+          placeholder="Digite um nome do usuário"
+          [minlength]="4"
+          [maxLength]="50"
+          autocomplete="off"
+        >
+        </app-form-field-text>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-form-field-password
+          label="Senha"
+          [control]="password"
+          placeholder="Digite uma senha"
+          [minlength]="4"
+          [maxLength]="50"
+        >
+        </app-form-field-password>
+
       </div>
     </div>
   </app-card>

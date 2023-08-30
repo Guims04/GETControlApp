@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from '../../service/users.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-users-form',
@@ -17,8 +19,10 @@ export class UsersFormComponent {
   @Input() userId?: number;
   form: FormGroup = new FormGroup({});
 
+  private subscriptions: Subscription = new Subscription();
+
   // Constructors
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private userService: UsersService) {}
 
   //Gets
   get active(): any {
@@ -47,6 +51,24 @@ export class UsersFormComponent {
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
     });
+  }
+
+  onSubmit() {
+    const success = () => {
+      console.log('Usuário salvo com sucesso!');
+    }
+    const error = (error: any) => {
+      console.log(error);
+    }
+    const data = {
+      username: this.username.value, 
+      password: this.password.value,
+      name: this.name.value
+    };
+
+    console.log(data);
+    
+    this.subscriptions.add(this.userService.create(data).subscribe(success, error));
   }
 
   close() {

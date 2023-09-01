@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, SimpleChanges } from '@angular/core';
 
 interface IUrlArray {
   element: string;
@@ -18,7 +18,7 @@ export class ContentHeaderComponent {
 
   constructor(private location: Location) {}
 
-  ngOnInit(): void {
+  ngAfterViewChecked(): void {
     this.createBreadcrumb();
   }
 
@@ -35,6 +35,7 @@ export class ContentHeaderComponent {
           return { element, last: index === array.length - 1 };
         }
       });
+    
   }
   
 }

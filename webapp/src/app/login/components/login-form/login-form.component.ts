@@ -62,6 +62,7 @@ export class LoginFormComponent {
       .subscribe(
         (data) => {
           this.authService.setToken(data.token);
+          this.authService.login();
           this.router.navigate(['dashboard']);
         },
         (error) => {

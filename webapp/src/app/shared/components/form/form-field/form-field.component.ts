@@ -15,6 +15,7 @@ export class FormFieldComponent {
   @Input() maxLength?: number;
   @Input() minlength?: number;
   @Input() appendIcon?: string;
+  @Input() autocomplete: string = 'on'; // on/off
 
   subscription: Subscription = new Subscription();
 

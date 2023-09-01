@@ -14,6 +14,9 @@ import { HeaderNotificationsComponent } from './components/header/header-notific
 import { HeaderToggleThemeComponent } from './components/header/header-toggle-theme/header-toggle-theme.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderPerfilComponent } from './components/header/header-perfil/header-perfil.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './services/error.interceptor';
+import { TokenInterceptor } from './services/token.interceptor';
 
 
 
@@ -41,6 +44,10 @@ import { HeaderPerfilComponent } from './components/header/header-perfil/header-
     HeaderComponent,
     SidebarComponent,
     FooterComponent
+  ],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ]
 })
 export class CoreModule { }

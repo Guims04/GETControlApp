@@ -8,11 +8,15 @@
     [showSubmit]="showSubmit"
     [showCancel]="showCancel"
     [showDelete]="showDelete"
+    (onSubmit)="submit($event)"
+    (onCancel)="cancel($event)"
   ></app-form-actions>
   <ng-content></ng-content>
   <app-form-actions
     [showSubmit]="showSubmit"
     [showCancel]="showCancel"
     [showDelete]="showDelete"
+    (onSubmit)="submit($event)"
+    (onCancel)="cancel($event)"
   ></app-form-actions>
 </form>

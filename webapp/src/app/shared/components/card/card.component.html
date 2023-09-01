@@ -1,0 +1,50 @@
+<div class="card card-outline card-{{ cardColor }} shadow">
+  <div class="card-header">
+    <h3 class="card-title">{{ title }}</h3>
+    <div class="card-tools">
+      <button
+        *ngIf="refresh"
+        type="button"
+        class="btn btn-tool"
+        data-card-widget="card-refresh"
+        data-source="widgets.html"
+        data-source-selector="#card-refresh-content"
+        data-load-on-init="false"
+      >
+        <i class="fas fa-sync-alt"></i>
+      </button>
+      <button
+        *ngIf="maximize"
+        type="button"
+        class="btn btn-tool"
+        data-card-widget="maximize"
+      >
+        <i class="fas fa-expand"></i>
+      </button>
+      <button
+        *ngIf="collapse"
+        type="button"
+        class="btn btn-tool"
+        data-card-widget="collapse"
+      >
+        <i class="fas fa-minus"></i>
+      </button>
+      <button
+        *ngIf="remove"
+        type="button"
+        class="btn btn-tool"
+        data-card-widget="remove"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="card-footer">
+    <ng-content select="[card-footer]"></ng-content>
+  </div>
+</div>

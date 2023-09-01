@@ -11,7 +11,7 @@ const authController = new AuthController();
 
 // Routes
 router.use("/login", authRouter);
-//router.use(authService.validateToken);
+router.use(authService.validateToken);
 router.use("/renew-token", authController.renewToken);
 router.use("/users", userRouter);
 

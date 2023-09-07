@@ -22,7 +22,11 @@ export class UsersFormComponent {
   private subscriptions: Subscription = new Subscription();
 
   // Constructors
-  constructor(private fb: FormBuilder, private router: Router, private userService: UsersService) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private userService: UsersService
+  ) {}
 
   //Gets
   get active(): any {
@@ -56,19 +60,21 @@ export class UsersFormComponent {
   onSubmit() {
     const success = () => {
       console.log('Usuário salvo com sucesso!');
-    }
+    };
     const error = (error: any) => {
       console.log(error);
-    }
+    };
     const data = {
-      username: this.username.value, 
+      username: this.username.value,
       password: this.password.value,
-      name: this.name.value
+      name: this.name.value,
     };
 
     console.log(data);
-    
-    this.subscriptions.add(this.userService.create(data).subscribe(success, error));
+
+    this.subscriptions.add(
+      this.userService.create(data).subscribe(success, error)
+    );
   }
 
   close() {

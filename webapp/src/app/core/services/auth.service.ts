@@ -7,9 +7,10 @@ import { AuthKey } from 'src/app/app.constants';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   jwt = new JwtHelperService();
-  private loggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.hasAccess() || false);
+  private loggedInSubject: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(this.hasAccess() || false);
 
-  constructor() { }
+  constructor() {}
 
   setToken(token: string) {
     return sessionStorage.setItem(AuthKey, token);
@@ -33,6 +34,5 @@ export class AuthService {
 
   logout() {
     this.loggedInSubject.next(false);
-    console.log('ue');
   }
 }

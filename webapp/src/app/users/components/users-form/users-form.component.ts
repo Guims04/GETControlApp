@@ -70,8 +70,6 @@ export class UsersFormComponent {
       name: this.name.value,
     };
 
-    console.log(data);
-
     this.subscriptions.add(
       this.userService.create(data).subscribe(success, error)
     );

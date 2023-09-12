@@ -5,9 +5,10 @@ import { UsersComponent } from './users.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersFormComponent } from './components/users-form/users-form.component';
+import { UsersActionsComponent } from './components/users-actions/users-actions.component';
 
 @NgModule({
-  declarations: [UsersComponent, UsersListComponent, UsersFormComponent],
+  declarations: [UsersComponent, UsersListComponent, UsersFormComponent, UsersActionsComponent],
   imports: [CommonModule, SharedModule, UsersRoutingModule],
 })
 export class UsersModule {}
